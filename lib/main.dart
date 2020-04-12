@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 
+import 'Widgets/categories_screen.dart';
+
 void main() 
 {
  runApp(MyApp());
@@ -14,11 +16,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch:Colors.amber, 
         ),
-        home: MyHomePage(),
+        home:MyHomePage(),
     );
   }
 }
-
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -29,11 +30,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Text("Hello"),
+      appBar: AppBar(title: Text("hello"),
       ),
-      body: Center(
-        child: Text('Atleast something'),
-        ),
-   );
+      body: CategoriesScreen(),
+    );
   }
 }
