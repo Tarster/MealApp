@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import 'Widgets/categories_screen.dart';
 
 void main() 
@@ -14,7 +13,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DeliMeals',
       theme: ThemeData(
-        primarySwatch:Colors.amber, 
+        primarySwatch:Colors.amber,
+        accentColor: Colors.pink,
+        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        textTheme: ThemeData.light().textTheme.copyWith(
+          body1: TextStyle(color: Color.fromRGBO(20, 51, 51, 1),),
+          body2: TextStyle(color: Color.fromRGBO(20, 51, 51, 1),),
+          title: TextStyle(fontFamily: 'RobotoCondensed',
+                           fontSize:20,
+                           fontWeight: FontWeight.bold, ),
+        ),
         ),
         home:MyHomePage(),
     );
@@ -30,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("hello"),
+      appBar: AppBar(title: Text("Foodilicious Xpress"),
       ),
       body: CategoriesScreen(),
     );

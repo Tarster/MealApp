@@ -9,7 +9,9 @@ import './category_item.dart';
 class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GridView( children: DUMMY_CATEGORIES.map((category)=> CategoryList(category.title,category.color)).toList(),
+    return GridView( 
+      padding: EdgeInsets.all(10),
+      children: DUMMY_CATEGORIES.map((category)=> CategoryList(category.title,category.color)).toList(),
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 300,
           childAspectRatio: 3 / 2,
