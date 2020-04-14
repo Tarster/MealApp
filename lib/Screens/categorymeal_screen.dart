@@ -15,6 +15,7 @@ class CategoryMealScreen extends StatelessWidget {
 
     final String id = routeargs['id'];
     final String title = routeargs['title'];
+    
     final meals = DUMMY_MEALS.where((meal) {
       return meal.categories.contains(id);
     }).toList();
@@ -29,6 +30,7 @@ class CategoryMealScreen extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (ctx, index) {
           return MealItem(
+              id : meals[index].id,
               title: meals[index].title,
               imageUrl: meals[index].imageUrl,
               duration: meals[index].duration,
