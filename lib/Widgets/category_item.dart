@@ -23,9 +23,11 @@ class CategoryList extends StatelessWidget {
       borderRadius: BorderRadius.circular(15),
       child: Container(
         padding: EdgeInsets.all(10),
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.title,
+        child: Center(
+          child: Text(
+            title,
+            style: Theme.of(context).textTheme.title,
+          ),
         ),
         //color: color,
         decoration: BoxDecoration(
