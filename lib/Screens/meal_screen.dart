@@ -3,6 +3,10 @@ import 'package:mealapp/Models/dummy.dart';
 
 class MealScreen extends StatelessWidget {
   static const String routeName = '/mealScreen';
+  final Function toggleFavorite;
+  final Function isFavorite;
+
+  MealScreen(this.toggleFavorite, this.isFavorite);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +15,7 @@ class MealScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('${selectedMeal.title}')),
+        title: Text('${selectedMeal.title}'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -114,6 +118,12 @@ class MealScreen extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+           isFavorite(id) ? Icons.star : Icons.star_border,
+        ),
+        onPressed: () => toggleFavorite(id),
       ),
     );
   }
